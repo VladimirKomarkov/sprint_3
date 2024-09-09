@@ -13,7 +13,8 @@ def start_notification_consumer():
         try:
             notification_data = json.loads(body)
             print(f"Sending notification for order ID: {notification_data['order_id']}"
-                  f" with status: {notification_data}['status")
+                  f" with status: {notification_data['status']},"
+                  f"correlation_id: {properties.correlation_id}")
             ch.basic_ack(delivery_tag=method.delivery_tag)
         except Exception as e:
             print(f"Error processing notification: {e}")
