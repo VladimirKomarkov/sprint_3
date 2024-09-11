@@ -1,7 +1,5 @@
 from unittest.mock import patch, MagicMock
-import json
 
-from tests.fixtures.mock_session_fixture import mock_session
 from app.config import settings
 
 
