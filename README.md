@@ -10,7 +10,7 @@
 2. Установите зависимости: "pip install -r requirements.txt"
 3. Создайте и примените миграции баз данных
 4. Запустите приложение: "uvicorn app.main:app --reload"
-5. Запустите consumers: "python app/consumers/prder_consumer.py" и "python app/consumers/notification_consumer.py"
+5. Запустите consumers: "python app/consumers/order_consumer.py" и "python app/consumers/notification_consumer.py"
 
 ## Как выполнить миграции базы данных
 
