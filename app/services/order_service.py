@@ -14,10 +14,7 @@ def create_order(db: Session, order_data: OrderCreate):
         item=order_data.item,
         quantity=order_data.quantity,
         total_price=order_data.total_price,
-        status=order_data.status,
-        created_at=order_data.created_at,
-        updated_at=order_data.updated_at,
-        user_id=order_data.user_id
+        status=order_data.status
     )
 
     db.add(new_order)
