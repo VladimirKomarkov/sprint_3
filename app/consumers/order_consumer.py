@@ -1,7 +1,7 @@
 import pika
 import json
 from sqlalchemy.orm import Session
-from ..models.orders.orders import Order
+from app.models.orders import Order
 from ..services.order_service import process_order
 from ..config import settings
 

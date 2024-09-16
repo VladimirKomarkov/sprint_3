@@ -1,5 +1,7 @@
+from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 
+app = FastAPI()
 
 class OrderCreate(BaseModel):
     customer_name: str
@@ -8,13 +10,10 @@ class OrderCreate(BaseModel):
     total_price: float
     status: str
 
-
 class OrderResponse(BaseModel):
     id: int
     customer_name: str
     item: str
     quantity: int
+    total_price: float
     status: str
-
-    class Config:
-        orm_model = True

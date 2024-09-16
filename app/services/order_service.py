@@ -1,5 +1,5 @@
 from sqlalchemy.orm import Session
-from ..models.orders.orders import Order
+from app.models.orders import Order
 from ..schemas.order import OrderCreate
 from ..utils.validation import validate_order_data
 from ..services.rabbitmq_service import send_to_queue

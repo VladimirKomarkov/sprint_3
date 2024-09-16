@@ -1,5 +1,6 @@
 from fastapi import FastAPI
-from app.db.base import engine, Base
+from app.db.base import engine
+from app.models.base import Base
 from .routers import order
 from .consumers.order_consumer import start_order_consumer
 from .consumers.notification_consumer import start_notification_consumer

@@ -2,7 +2,7 @@ from fastapi.testclient import TestClient
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from ..main import app
-from ..models.orders.orders import Base
+from app.models.orders import Base
 from ..routers.order import get_db
 
 SQLALCHEMY_DATABASE_URL = "postgresql+psycopg2://owner:password@localhost:5432/jip_project"

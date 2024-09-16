@@ -1,6 +1,6 @@
 import pytest
 from unittest.mock import MagicMock
-from app.models.products.products import Products
+from app.models.products import Products
 
 @pytest.fixture
 def mock_db_session():

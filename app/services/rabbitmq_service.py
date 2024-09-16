@@ -3,7 +3,7 @@ import json
 from ..config import settings
 
 
-def send_to_queue(queue_name: str, message: dict) -> None:
+def send_to_queue(queue_name: str, message: dict, ) -> None:
     connection = pika.BlockingConnection(pika.URLParameters(settings.rabbitmq_url))
     channel = connection.channel()
 

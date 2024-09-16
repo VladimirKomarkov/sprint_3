@@ -1,6 +1,6 @@
 import pytest
 from unittest.mock import MagicMock
-from app.models.shops.shops import Shops
+from app.models.shops import Shops
 
 
 @pytest.fixture

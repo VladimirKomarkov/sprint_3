@@ -1,6 +1,6 @@
 import pytest
 from unittest.mock import MagicMock
-from app.models.reviews.reviews import Reviews
+from app.models.reviews import Reviews
 
 
 @pytest.fixture

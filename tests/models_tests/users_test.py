@@ -1,6 +1,6 @@
 import pytest
 from unittest.mock import MagicMock
-from app.models.users.users import Users
+from app.models.users import Users
 
 
 @pytest.fixture

@@ -1,6 +1,6 @@
 import pytest
 from unittest.mock import MagicMock
-from app.models.orders.orders import Order
+from app.models.orders import Order
 
 
 @pytest.fixture
