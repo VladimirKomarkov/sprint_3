@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI
 from pydantic import BaseModel
 
 app = FastAPI()
@@ -17,3 +17,5 @@ class OrderResponse(BaseModel):
     quantity: int
     total_price: float
     status: str
+
+

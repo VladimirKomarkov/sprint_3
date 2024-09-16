@@ -32,7 +32,7 @@ def mock_db():
 @patch("app.services.order_service.create_order")
 @patch("app.services.rabbitmq_service.send_to_queue")
 def test_create_new_order_success(mock_send_to_queue, mock_create_order, mock_db):
-    mock_create_order.return_value = OrderResponse(
+    mock_create_order.return_value = OrderCreate(
         id=1,
         customer_name="John Doe",
         item="laptop",
