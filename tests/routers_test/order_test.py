@@ -5,8 +5,7 @@ from sqlalchemy.orm import Session
 from fastapi.testclient import TestClient
 
 from app.main import app
-from app.schemas.order import OrderCreate, OrderResponse
-from app.services.order_service import create_order
+from app.schemas.order import OrderCreate
 
 client = TestClient(app)
 
