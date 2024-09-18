@@ -1,5 +1,6 @@
 from app.models.base import Base
 from sqlalchemy import Column, Integer, String, Date, ForeignKey
+import logging
 
 
 class ShippingAddresses(Base):
@@ -12,3 +13,5 @@ class ShippingAddresses(Base):
     postal_code = Column(Integer)
     created_at = Column(Date)
     user_id = Column(Integer, ForeignKey('users.id'), unique=True)
+
+    logging.info(f"Таблица {__tablename__} успешно создана")

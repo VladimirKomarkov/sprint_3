@@ -1,6 +1,7 @@
 import pytest
 from unittest.mock import MagicMock, patch
 
+from pydantic import ValidationError
 from sqlalchemy.orm import Session
 
 from app.models.orders import Order
@@ -22,17 +23,6 @@ def valid_order_data():
         total_price=1000.00,
         status="pending"
     )
-
-
-
-import pytest
-from unittest.mock import MagicMock, patch
-from sqlalchemy.orm import Session
-from pydantic import ValidationError
-
-from app.models.orders import Order
-from app.schemas.order import OrderCreate
-from app.services.order_service import create_order, process_order
 
 
 @pytest.fixture
@@ -74,8 +64,6 @@ def test_create_order(mock_send_to_queue, mock_validate_order_data, mock_db_sess
     else:
         with pytest.raises(ValidationError):
             create_order(mock_db_session, OrderCreate(**order_data))
-
-
 
 
 @patch("app.services.order_service.send_to_queue")

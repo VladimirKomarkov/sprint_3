@@ -3,6 +3,7 @@ from app.models.orders import Order
 from ..schemas.order import OrderCreate
 from ..utils.validation import validate_order_data
 from ..services.rabbitmq_service import send_to_queue
+import logging
 
 
 def create_order(db: Session, order_data: OrderCreate):
@@ -20,8 +21,10 @@ def create_order(db: Session, order_data: OrderCreate):
     db.add(new_order)
     db.commit()
     db.refresh(new_order)
+    logging.info(f"Создан новый заказ: {new_order.id}")
 
     send_to_queue("order_processing", new_order.to_dict())
+    logging.info(f"Отправлено сообщение о новом заказе в очередь: {new_order.id}")
 
     return new_order
 

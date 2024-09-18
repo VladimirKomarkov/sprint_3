@@ -1,5 +1,6 @@
 from app.models.base import Base
 from sqlalchemy import Column, String, Date, Integer
+import logging
 
 
 class Categories(Base):
@@ -9,3 +10,5 @@ class Categories(Base):
     name = Column(String)
     description = Column(String, unique=True)
     created_at = Column(Date)
+
+    logging.info(f"Таблица {__tablename__} успешно создана")

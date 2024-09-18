@@ -1,5 +1,6 @@
 from app.models.base import Base
 from sqlalchemy import Column, Integer, String, Float, Date, ForeignKey
+import logging
 
 
 class Order(Base):
@@ -14,6 +15,8 @@ class Order(Base):
     created_at = Column(Date)
     updated_at = Column(Date)
     user_id = Column(Integer, ForeignKey('users.id'))
+
+    logging.info(f"Таблица {__tablename__} успешно создана")
 
     def to_dict(self):
         return {

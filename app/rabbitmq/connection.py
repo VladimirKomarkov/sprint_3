@@ -1,4 +1,7 @@
 import pika
+import logging
+
+logging.basicConfig(level=logging.INFO)
 
 try:
     connection_params = pika.ConnectionParameters(
@@ -15,9 +18,12 @@ try:
     channel = connection.channel()
 
     channel.queue_declare(queue='my_queue')
-    print("Очередь создана и подключение установлено.")
+    logging.info("Очередь создана и подключение установлено.")
 
+except pika.exceptions.AMQPConnectionError as e:
+    logging.error(f"Ошибка подключения к RabbitMQ: {e}")
 
 finally:
-    connection.close()
-    print("Подключение закрыто.")
+    if 'connection' in locals() and connection.is_open:
+        connection.close()
+        logging.info("Подключение закрыто.")

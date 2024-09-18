@@ -1,5 +1,6 @@
 from app.models.base import Base
 from sqlalchemy import Column, Integer, String, Date
+import logging
 
 
 class Shops(Base):
@@ -11,3 +12,5 @@ class Shops(Base):
     address = Column(String)
     created_at = Column(Date)
     updated_at = Column(Date)
+
+    logging.info(f"Таблица {__tablename__} успешно создана")

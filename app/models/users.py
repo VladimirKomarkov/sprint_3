@@ -1,5 +1,6 @@
 from app.models.base import Base
 from sqlalchemy import Column, Integer, String, Date
+import logging
 
 
 class Users(Base):
@@ -16,3 +17,5 @@ class Users(Base):
     first_name = Column(String, unique=True)
     last_name = Column(String, unique=True)
     address = Column(String, unique=True)
+
+    logging.info(f"Таблица {__tablename__} успешно создана")
